@@ -1,1 +1,2 @@
-# pioneer-particle
+- 如果你还没有 YesCaptcha 账号，请先在这里注册：[yescaptcha注册链接](https://yescaptcha.com/i/0vVEgw)。
+- 便宜Twitter/Discord令牌号：[hdd.cm](https://hdd.cm/)  Twitter单价低至0.2元 Discord单价低至0.4元
