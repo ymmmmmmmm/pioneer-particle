@@ -347,19 +347,6 @@ def get_signature(merkle_root_result, signature, evm_signature):
 def daily_check_in(address, key, mac_key, device_id, token):
     session = requests.session()
     account = Account.from_key(key)
-    headers = {
-        'accept': 'application/json, text/plain, */*',
-        'accept-language': 'zh-CN,zh;q=0.9',
-        'authorization': f'Bearer {token}',
-        'cache-control': 'no-cache',
-        # 'content-length': '0',
-        'origin': 'https://pioneer.particle.network',
-        'pragma': 'no-cache',
-        'priority': 'u=1, i',
-        'referer': 'https://pioneer.particle.network/',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-    }
-
     random_str, timestamp = str(uuid.uuid4()), int(time.time())
     mac_info = {"timestamp": timestamp, "random_str": random_str,
                 "device_id": device_id, "sdk_version": "web_1.0.0",
@@ -378,6 +365,18 @@ def daily_check_in(address, key, mac_key, device_id, token):
         'mac': sha256(dict(sorted(mac_info.items())))
     }
 
+    headers = {
+        'accept': 'application/json, text/plain, */*',
+        'accept-language': 'zh-CN,zh;q=0.9',
+        'authorization': f'Bearer {token}',
+        'cache-control': 'no-cache',
+        # 'content-length': '0',
+        'origin': 'https://pioneer.particle.network',
+        'pragma': 'no-cache',
+        'priority': 'u=1, i',
+        'referer': 'https://pioneer.particle.network/',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+    }
     response = session.post('https://pioneer-api.particle.network/streaks/streak_tx', params=params,
                             headers=headers).json()
     logger.debug(response)
