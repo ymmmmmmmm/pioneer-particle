@@ -16,3 +16,12 @@ pip install -r requirements.txt
 - 便宜Discord单绑令牌号：[hdd.cm](https://hdd.cm/)  单价低至0.4元
 # 说明
 - 代码仅供学习参考
+---
+
+
+感谢使用
+BeraChainTools！如有任何问题或建议，请随时通过 [GitHub Issues](https://github.com/ymmmmmmmm/pioneer-particle/issues) 提交。
+
+如果您认可和喜欢 pioneer-particle 的功能和使用体验，我非常欢迎您给项目点个 star。您的 star 是对我的工作的认可和支持，也是我不断改进和提升
+pioneer-particle 的动力！谢谢您的支持！
+
